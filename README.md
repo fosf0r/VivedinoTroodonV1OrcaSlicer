@@ -21,8 +21,6 @@ Here's what my end gcode does:
 
 Other things of note:
 
-- None of my "M98" commands in Start/End gcode are going to work for you, you will have to replace all of those.
-
 - Also included are fake "filaments" for pressure advance calibration purposes, and a process preset to go with it called "Calibration - PA Tower 0.00-0.15-0.003". Those numbers are what you have to put into Orca's pressure advance calibration dialog (when in "PA Tower" mode), for it to work with a high flow nozzle. If this test rips apart halfway up or becomes inconclusive too fast, then you (probably don't have a high flow setup and) have to shrink my range by setting the 3 numbers in the pressure advance calibration dialog to 0.00, 0.10, 0.002 (which works with Bambu and other more "normal" printers).
 
 - I didn't setup extruder_clearance_radius worth a damn, so I suggest against doing any "by object" prints with my kit (instead choose "by layer"), unless you can figure out how to measure the clearance and fix that stuff. I'm pretty sure my kit might knock down neighboring finished prints when printing in "by object" mode because I didn't spend any time trying to set that up.

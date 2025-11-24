@@ -1,5 +1,5 @@
 ## To import my kit:
-1) Install OrcaSlicer [https://github.com/OrcaSlicer/OrcaSlicer/releases/]
+1) Install OrcaSlicer [https://github.com/OrcaSlicer/OrcaSlicer/releases/latest]
 2) If not prompted to choose a printer, go to the Prepare tab and add a new printer, and checkmark the "**Troodon 2.0 RRF 0.4 nozzle**" printer - my kit **requires**/inherits it.
 3) Then, import my kit file `TroodonV1OrcaImportKit.orca_printer`: **File**, **Import**, **Import configs**.
 4) After importing, select my "**Troodon 400 v1**" printer, click the edit pencil to begin editing, go to the "**Machine G-code**" tab, and in the "Machine start G-code" field, paste in the data from the separate file `StartGcode.gcode`.  Do the same for "Machine end G-code" using `EndGcode.gcode`.

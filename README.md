@@ -7,7 +7,8 @@ So sorry. Everything here remains `as-is`, to the best of my ability.
 3) Then, import my kit file `TroodonV1OrcaImportKit.orca_printer`: **File**, **Import**, **Import configs**.
 4) After importing, select my "**Troodon 400 v1**" printer, click the edit pencil to begin editing, go to the "**Machine G-code**" tab, and in the "Machine start G-code" field, paste in the data from the separate file `StartGcode.gcode`.  Do the same for "Machine end G-code" using `EndGcode.gcode`.
 
-**GCODE WARNING : A lot of my macros require a variable called `global maxXYspeed` set, which you can do as follows** in your `config.g`:
+## Gcode warnings
+A lot of my macros require a variable called `global maxXYspeed` set, which you can do as follows** in your `config.g`:
 ```gcode
 if !exists(global.maxXYspeed) || global.maxXYspeed=null
 	global maxXYspeed=18000
@@ -15,6 +16,15 @@ else
 	set global.maxXYspeed=18000
 ```
 (otherwise you'd need to just edit the use of `maxXYspeed` out of all my macros.)
+
+**Then other sections, like `StartGcode.gcode` and `EndGcode.gcode` call into macros in both my `macros` and `sys` folders, so I have uploaded those here as well into [macros/](https://github.com/fosf0r/VivedinoTroodonV1OrcaSlicer/tree/main/macros) and [sys/](https://github.com/fosf0r/VivedinoTroodonV1OrcaSlicer/tree/main/sys).**
+
+You also might need a file called `setoffset.g` in the SYS folder containing something like:
+```gcode
+G31 P500 X0 Y21 Z1.83 ; set Z probe trigger value, offset and trigger height. higher number is closer to the bed.
+```
+(Those were MY specific values; don't use the above numbers literally - that might damage your bed or nozzle or entire printer.)
+My Troodon V1 was jank, and had broken firmware, so I had to create a lot of macros and connectivity by myself.
 
 ### Gantry heft warning
 The Troodon V1 comes stock with **too much stuff** on the gantry. Don't allow your acceleration to go too high until you **remedy the extremely heavy cable chain, *among other things***. Ask for **Robert** at [A3DP](https://advanced3dprinting.com/), I believe he designed the replacement cable chain and other mods that alleviate the heft.

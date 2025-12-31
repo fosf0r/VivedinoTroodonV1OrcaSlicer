@@ -1,8 +1,24 @@
+## I no longer own a Troodon V1
+So sorry. Everything here remains `as-is`, to the best of my ability.
+
 ## To import my kit:
 1) Install OrcaSlicer [https://github.com/OrcaSlicer/OrcaSlicer/releases/latest]
 2) If not prompted to choose a printer, go to the Prepare tab and add a new printer, and checkmark the "**Troodon 2.0 RRF 0.4 nozzle**" printer - my kit **requires**/inherits it.
 3) Then, import my kit file `TroodonV1OrcaImportKit.orca_printer`: **File**, **Import**, **Import configs**.
 4) After importing, select my "**Troodon 400 v1**" printer, click the edit pencil to begin editing, go to the "**Machine G-code**" tab, and in the "Machine start G-code" field, paste in the data from the separate file `StartGcode.gcode`.  Do the same for "Machine end G-code" using `EndGcode.gcode`.
+
+**GCODE WARNING : A lot of my macros require a variable called `global maxXYspeed` set, which you can do as follows** in your `config.g`:
+```gcode
+if !exists(global.maxXYspeed) || global.maxXYspeed=null
+	global maxXYspeed=18000
+else 
+	set global.maxXYspeed=18000
+```
+(otherwise you'd need to just edit the use of `maxXYspeed` out of all my macros.)
+
+### Gantry heft warning
+The Troodon V1 comes stock with **too much stuff** on the gantry. Don't allow your acceleration to go too high until you **remedy the extremely heavy cable chain, *among other things***. Ask for **Robert** at [A3DP](https://advanced3dprinting.com/), I believe he designed the replacement cable chain and other mods that alleviate the heft.
+
 ### Pressure advance warning
 If you have a high flow hotend, such as a **Mosquito Magnum** (which is what I had), or a **Volcano**-like hotend, or a "**Takoto**", you ***WILL*** have to run a **Pressure Advance calibration** test for EVERY SINGLE filament you want to use, as the **K** value can range anywhere from 0.20 to 0.90. My average K value across 50 filaments is like 0.40. Printing with K left at 0.0 with one of those type of hotends will result in horrifying prints. To be clear, you only have to calibrate it once for every single filament, and then store the pressure advance value permanently in the slicer. You'd only have to change it if the manufacturer changed the formula behind the filament from batch to batch.
 

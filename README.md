@@ -1,6 +1,9 @@
 ## I no longer own a Troodon V1
 So sorry. Everything here remains `as-is`, to the best of my ability.
 
+## Some of the code/macros in here assumes you have RRF 3.5.4 or higher
+I don't have a guide to upgrade that (yet).
+
 ## To import my kit:
 1) Install OrcaSlicer [https://github.com/OrcaSlicer/OrcaSlicer/releases/latest]
 2) If not prompted to choose a printer, go to the Prepare tab and add a new printer, and checkmark the "**Troodon 2.0 RRF 0.4 nozzle**" printer - my kit **requires**/inherits it.
